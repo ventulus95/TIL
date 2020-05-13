@@ -1,4 +1,4 @@
-# 📰 [Article](Article/Article.md)
+# 📰 [Article](Article.md)
 
 블로그나 여러가지 기타 아티클 모음! 
 
