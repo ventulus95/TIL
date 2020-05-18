@@ -110,10 +110,70 @@
 
 * ## 18일
 
-  1. ### Django 파일 업로드시 안올라가는 버그 
+  1. ### Django 파일 업로드시 안올라갈때 대처법
 
-  2. ### 원격 저장소에 올라간 커밋 날리기
+     Django 파일 업로드시 분명히 model Form도 다 만들고 했는데 안올라가는 상황이 있다. ?? 왜 안되나했드니만
 
-  3. ### favicon.ico 404 Not found
+     ```html
+     <form method="POST" class="post-form" enctype="multipart/form-data">
+     ```
 
-  4. ### 특정 확장자만 파일 업로드 가능하게 만들기 (mp3)
+     enctype에서 multipart/form-data를 하지 않았기 때문. 파일 저장이 안되서 실제로 보여줘야할때 재대로 보여줄 수 없었다 .
+
+     즉, 저 **enctype**을 추가하지 않은 경우 파일 자체는 넘어가지지 않는다. 
+
+     
+
+  2. ### 특정 확장자만 파일 업로드 가능하게 만들기 (mp3)
+
+     https://stackoverflow.com/questions/3648421/only-accept-a-certain-file-type-in-filefield-server-side
+
+     
+
+     ```python
+     from django.core.validators import FileExtensionValidator
+     from django.db import models
+     
+     class MyModel(models.Model):
+         pdf_file = models.FileField(upload_to='foo/',
+                                     validators=[FileExtensionValidator(allowed_extensions=['pdf'])])
+     ```
+
+     간단하게 vaildator를 통해서 처리하는 방식이 가장 이상적이다.  다른 방식은 아예 validator를 함수화하거나 모듈화해서 그걸 끌어와서 해결하는 방식
+
+     링크에서도 확인했지만 위의 **코드는 안전하지 않다는 것**이 문젠데 즉, 이렇게 유효성 검사를 하면 실제로 파일 뒤의 글자 .mp3만되면 통과가 되기 때문. 
+
+     근데 솔직히 말하면, front에서 처리하는 게  더 직관적인 것 같음. submit후 에 안된다고 하면 좀 열받을 듯.
+
+     
+
+  3. ### 원격 저장소에 올라간 커밋 날리기
+
+     일단 2가지 방식이 존재 
+
+     1. git reset 
+
+        깃 리셋은 애초 커밋 이전으로 돌려버리겠다는 것이다. 특히 --HARD로 하면 아에 완전히 다 날려버리고 commit없에는 방식인데, 이러면 기존 커밋 내역이 다날라간다. 즉, 외부인과의 협업을 하는 경우 비추
+
+        push시에는 -f 옵션 추가해서 강제 푸쉬해야함.
+
+     2. git revert
+
+        특정 커밋을 돌리는 것도 commit에 만들어버리는 것. 
+
+     
+
+     참고: https://jupiny.com/2019/03/19/revert-commits-in-remote-repository/
+
+     
+
+     
+
+  4. ### favicon.ico 404 Not found
+
+     ```html
+     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+     ```
+
+     webBean에 발생하는 오류라는데 jetBrain 계열의 IDE 오류인 듯하다. 
+
