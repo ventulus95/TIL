@@ -5,6 +5,7 @@
 * [5월 15일](#15일)
 * [5월 16일](#16일)
 * [5월 18일](#18일)
+* [5월 24일](#24일)
 
 
 
@@ -65,8 +66,6 @@
 
 
 -------
-
-
 
 * ## 16일
 
@@ -177,3 +176,119 @@
 
      webBean에 발생하는 오류라는데 jetBrain 계열의 IDE 오류인 듯하다. 
 
+----
+
+- ## 24일
+
+  1. ### 장고 테이블 지우고 난 후 다시 마이그레이션 하는 방법!
+
+     장고에서 DB table이 꼬이면, ㄹㅇ 개노답인 상황이 생긴다. 특히, 어디서부터 table이 생긴건지, 어디서부터 없는건지 파악할 수 없기때문에 진짜 말그대로 sqlite3에 직접들어가서 확인해보는 것과 같은 방식으로 찾는 것도 있다. 
+
+     그리고 장고 자체 버그인지 아니면 내가 장고에 대한 이해도가 떨어지는지는 모르겠는데 modeling을 바꾸고 난다음 python manage.py makemigrations 과 python manage.py migrate 후에 modeling이 재대로 적용되지 않는 이상한 버그가 있는 듯하다. 
+
+     특히, migration을 날리고 난다음에 table은 있는 경우 오히려 테이블은 이전 모델이라 재대로 key가 적용이 안되는 이상한... 별의 별 상황을 다 겪었다. 
+
+     즉, 요약해보자면 
+
+     - modeling이 변경되면 migration이 잘 변경됨 
+     - 하지만 가끔 migration을 그냥 물리적으로 파일을 없에버리면, makemigrations 혹은 migrate을 통해서 직접 테이블이 변경되지 않는 이상한 버그가 있다. 
+     - 또 거기에 직접 SQLite3에 들어가서 테이블을 삭제하고 다시 migrate작업을 해도 다시 테이블이 생성되지 않아서 난감.
+
+     
+
+     이런 버그를 해결하는 방법은 다음과 같다.
+
+     
+
+     1. 해당 앱에 있는 migrations 폴더안의  __init__.py 파일을 제외하고 모두 삭제하기!
+
+     2. database에 직접 접속하여 테이블 중 django_migrations 라는 테이블에서 해당 앱에 대한 raw를 삭제.
+
+     `DELETE FROM django_migrations WHERE app = '앱 이름'`
+
+     3. python3 manage.py makemigrations // python3 manage.py migrate 수행 하면 해결
+
+     
+
+     참고: https://forybm.tistory.com/2 
+
+     
+
+  2. ### 장고에서 Migrate란?
+
+     이런 근본적인 문제를 해결하기위해서는 migrate가 뭔가에 대해서 이해를 하는 것이 중요할 것 같다.
+
+     1. 마이그레이션 파일 (초안) 생성하기 : `makemigrations`
+     2. 해당 마이그레이션 파일을 DB에 반영하기 : `migrate`
+
+     예상보다는 조금 심플한 모습을 가지고 있다. 
+
+     
+
+     쉽게 이야기하면 장고에서 model을 만들면 -> `makemigrations`를 통해서 일단 SQL문으로 table화를  어떤 필드를가지고 table을 만들지 혹은 어떤 필드가 변경 됬는지 삭제 되었는지를 저장해놓는 파일이라고 보면 된다. 
+
+     -> `migrate`의 경우 이 migrations를 통해 만들어진 파일을 바탕으로 DB에 직접적으로 SQL문으로 자동으로 변환해주는 시스템이다.
+
+     
+
+     1번 같은 위의 같은 문제 (no such table, column 등의 오류) 로 실제 DB를 날리거나 할 것이 아니면 여러가지 방법을 강구해야 하는데, 찾아보는 블로그에 의하면 migration오류라고 했다. 
+
+     
+
+     이런 오류들을 확인하는 방법은 결국 DB에서 직접 확인하던가 혹은 migration 확인하는 방법으로 처리하는게 제일 좋아보였다. (오늘 해결할때 가장 원인을 잘 찾았던 것도 결국에는 `showmigrations` 로 어디까지 모델링 되어있는지 확인하는 방식으로 처리했었다.)
+
+     
+
+     참고: https://wayhome25.github.io/django/2017/03/20/django-ep6-migrations/
+
+     
+
+  3. ### 장고 One To One modeling 하는 방식 (장고 기본 User 확장하는 방법)
+
+     그 어떤 블로그보다 이 영상 한 편이 훨씬 더 유익했다. 특히나 Forms.py로 기본 User 모델도 이용하고, views.py를 훨씬 코드량을 줄일 수 있었기 때문에, 개인적으로는 훨씬 좋았다. 대부분의 One to One Field를 알려주는 블로그는 내 모델에서는 재대로 적용이 안됬다는 것도 컸다.
+
+     차후에 블로그에 정리해서 올려보는 것도 괜찮아 보인다.
+
+     https://www.youtube.com/watch?time_continue=533&v=Tja4I_rgspI&feature=emb_title
+
+     이 영상에서 사용하는 방식을 간단하게 요약해보자면, 대략 이렇다.
+
+     1. Admin에 이 앱을 등록한다. 
+     2. Model 만들기 one to one으로 user연결
+     3. Forms.py만들기 특이한건 User extradata도  Form으로 확장시킴. 
+     4. views.py에 Form등록. 
+     5. html에 template를 통해서 form 등록.
+
+     
+
+  4. ### 장고 Forms.py input type 변경
+
+     결론은 field 내부의 widget 매개변수를 통해서 type을 스스로 정할 수 있다. 
+
+     ```python
+     FRUIT_CHOICES= [
+         ('orange', 'Orange s'),
+         ('cantaloupe', 'Cantaloupes'),
+         ('mango', 'Mangoes'),
+         ('honeydew', 'Honeydews'),
+         ]
+     
+     class UserForm(forms.Form):
+         first_name= forms.CharField(max_length=100)
+         last_name= forms.CharField(max_length=100)
+         email= forms.EmailField()
+         age= forms.IntegerField()
+         favorite_fruit= forms.CharField(label='What is your favorite fruit?', widget=forms.RadioSelect(choices=FRUIT_CHOICES))
+     ```
+
+     아래 favorite_fuit변수처럼 forms의 CharField내부의 매개변수로 input type을 변경할 수 있다. 지금 예시는 radio 타입
+
+     장고 widget 공식 문서 링크: https://docs.djangoproject.com/en/3.0/ref/forms/widgets/
+
+  
+
+  
+
+  
+
+  
