@@ -16,11 +16,11 @@
 
   * [장고 테이블 지우고 난 후 다시 마이그레이션 하는 방법!](Django/장고_테이블_지우고_난_후_다시_마이그레이션_하는_방법!.md)
 
-  * [장고 Forms.py input type 변경](Djagno/장고_Forms.py_input_type_변경.md)
+  * [장고 Forms.py input type 변경](Djagno/장고_Forms_py_input_type_변경.md)
 
   * [장고 URL html 템플릿 URL 설정시 참고사항](Django/장고_URL_html_템플릿_URL_설정시_참고사항.md)
 
-  * [장고에서 Migrate란?](Django/장고에서_Migrate란?.md)
+  * [장고에서 Migrate란?](Django/장고에서_Migrate란.md)
 
   * [특정 확장자만 파일 업로드 가능하게 만들기 (mp3)](Django/특정_확장자만_파일_업로드_가능하게_만들기_(mp3).md)
 
