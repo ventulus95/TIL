@@ -10,13 +10,13 @@
 
 * ## Django
 
-  * [장고 One To One modeling 하는 방식 (장고 기본 User 확장하는 방법)](Django/장고_기본 _User_확장하는_방법.md)
+  * [장고 One To One modeling 하는 방식 (장고 기본 User 확장하는 방법)](Django/장고_기본_User_확장하는_방법.md)
 
   * [장고 다른 OS에서 환경설정 동일화하는 방식](Django/장고_다른_OS에서_환경설정_동일화하는_방식.md)
 
   * [장고 테이블 지우고 난 후 다시 마이그레이션 하는 방법!](Django/장고_테이블_지우고_난_후_다시_마이그레이션_하는_방법!.md)
 
-  * [장고 Forms.py input type 변경](Djagno/장고_Forms_py_input_type_변경.md)
+  * [장고 Forms.py input type 변경](Django/장고_Forms_py_input_type_변경.md)
 
   * [장고 URL html 템플릿 URL 설정시 참고사항](Django/장고_URL_html_템플릿_URL_설정시_참고사항.md)
 
