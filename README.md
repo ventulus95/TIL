@@ -6,10 +6,11 @@
 
 &nbsp;
 
+## 💡 INDEX
 
+* ## Django
 
-## 📅 THIS MONTH
+* ## GIT
 
-* [2020.05](2020_05/5월_TIL.md)
 * 
 
