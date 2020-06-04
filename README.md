@@ -31,11 +31,27 @@
   * [favicon.ico 404 Not found](Django/favicon.ico_404_Not_found.md)
 
     
+    
+    &nbsp;
 
 * ## GIT
 
   * [원격 저장소에 올라간 커밋 날리기](Git/원격_저장소에_올라간_커밋_날리기.md)
   * [Git pull request시 Conflict 발생시 처리하는 방법](Git/Git_pull_request시_Conflict_발생시_처리하는_방법.md)
 
-* 
+  
+
+  &nbsp;
+
+* ## AWS
+
+  * [장고에 file 이동 위치 S3로 경로 설정](AWS/장고_file_경로설정,md)
+  
+  * [EB 설정법](AWS/EB설정법.md)
+  
+  * [ElasticBeanstalk란?](AWS/ElasticBeanstalk.md)
+  
+  * [S3에 Static파일 저장 경로 잡기](AWS/s3에_static파일_저장경로잡기.md)
+  
+    
 
