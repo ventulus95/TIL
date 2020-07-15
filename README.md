@@ -46,12 +46,14 @@
 * ## AWS
 
   * [장고에 file 이동 위치 S3로 경로 설정](AWS/장고_file_경로설정,md)
-  
   * [EB 설정법](AWS/EB설정법.md)
-  
   * [ElasticBeanstalk란?](AWS/ElasticBeanstalk.md)
-  
   * [S3에 Static파일 저장 경로 잡기](AWS/s3에_static파일_저장경로잡기.md)
   
-    
+
+
+
+* ## SPRING
+
+  * [mybatis 에서 동적 쿼리를 위한 여러개의 input parameter 처리](Spring/mybatis_동적쿼리_parameter_처리.md)
 
