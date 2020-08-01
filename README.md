@@ -49,6 +49,7 @@
   * [EB 설정법](AWS/EB설정법.md)
   * [ElasticBeanstalk란?](AWS/ElasticBeanstalk.md)
   * [S3에 Static파일 저장 경로 잡기](AWS/s3에_static파일_저장경로잡기.md)
+  * [AWS Linux에서 FFMPEG 설치하기 (ElasticBeanStalk)](AWS/AWS_Linux에서_FFMPEG_설치하기.md)
   
 
 
@@ -56,4 +57,5 @@
 * ## SPRING
 
   * [mybatis 에서 동적 쿼리를 위한 여러개의 input parameter 처리](Spring/mybatis_동적쿼리_parameter_처리.md)
+  * [Mybatis JDK 버젼 맞추기](Spring/Mybatis_JDK_버젼_맞추기.md)
 
