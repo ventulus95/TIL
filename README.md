@@ -29,7 +29,8 @@
 
   * [원격 저장소에 올라간 커밋 날리기](Git/원격_저장소에_올라간_커밋_날리기.md)
   * [Git pull request시 Conflict 발생시 처리하는 방법](Git/Git_pull_request시_Conflict_발생시_처리하는_방법.md)
-  * [Git 커밋하나만 되돌리는법](Git/Git_커밋하나만_되돌리는법.md)
+  * [Git 커밋하나만 되돌리는법](Git/Git_커밋하나만_되돌리는법.md) 
+  * [Pull Request 올릴때 같은 Issue를 링크하는 법](Git/pull_Request와_같은_Issue를_링크하는_법.md)
 
 
   &nbsp;
