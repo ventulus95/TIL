@@ -51,4 +51,5 @@
   * [mybatis 에서 동적 쿼리를 위한 여러개의 input parameter 처리](Spring/mybatis_동적쿼리_parameter_처리.md)
   * [Mybatis JDK 버젼 맞추기](Spring/Mybatis_JDK_버젼_맞추기.md)
   * [Spring Boot로 카카오 소셜로그인 만들기](Spring/Spring_Boot로_카카오_소셜로그인_만들기.md)
+  * [Spring Data JPA에서 Query를 사용하는 방식](Spring/Spring_Data_JPA에서_Query를_자동_생성하는_법.md)
 
