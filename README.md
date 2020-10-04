@@ -20,9 +20,10 @@
   * [Django 파일 업로드시 안올라갈때 대처법](Django/Django_파일_업로드시_안올라갈때_대처법.md)
   * [Django를 pycharm에서 적용하는 방식](Django/Django를_pycharm에서_적용하는_방식.md)
   * [favicon.ico 404 Not found](Django/favicon.ico_404_Not_found.md)
+  * [장고에서 머신러닝을 사용하는 방법](Django/장고에서_머신러닝을_적용하는법.md)
 
   
-    
+
     &nbsp;
 
 * ## GIT
@@ -43,6 +44,7 @@
   * [S3에 Static파일 저장 경로 잡기](AWS/s3에_static파일_저장경로잡기.md)
   * [AWS Linux에서 FFMPEG 설치하기 (ElasticBeanStalk)](AWS/AWS_Linux에서_FFMPEG_설치하기.md)
   
+
 &nbsp;
 
 
@@ -52,4 +54,5 @@
   * [Mybatis JDK 버젼 맞추기](Spring/Mybatis_JDK_버젼_맞추기.md)
   * [Spring Boot로 카카오 소셜로그인 만들기](Spring/Spring_Boot로_카카오_소셜로그인_만들기.md)
   * [Spring Data JPA에서 Query를 사용하는 방식](Spring/Spring_Data_JPA에서_Query를_자동_생성하는_법.md)
+  * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](Spring/Spring_security_Oauth_Redirect_URI와_ 로그인_URI가_만들어지는_방법 .md)
 
