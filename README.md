@@ -54,5 +54,5 @@
   * [Mybatis JDK 버젼 맞추기](Spring/Mybatis_JDK_버젼_맞추기.md)
   * [Spring Boot로 카카오 소셜로그인 만들기](Spring/Spring_Boot로_카카오_소셜로그인_만들기.md)
   * [Spring Data JPA에서 Query를 사용하는 방식](Spring/Spring_Data_JPA에서_Query를_자동_생성하는_법.md)
-  * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](Spring/Spring_security_Oauth_Redirect_URI와_ 로그인_URI가_만들어지는_방법 .md)
+  * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](Spring/Spring_security_Oauth_Redirect_URI와_ 로그인_URI가_만들어지는_방법.md)
 
