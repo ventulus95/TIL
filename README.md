@@ -1,58 +1,44 @@
-# 👾 TIL (Today I Learned) 👀
+# 👾 TIL \(Today I Learned\) 👀
 
 오늘 봤던 읽어 보면 좋은 아티클과 배운 것들을 정리합니다.
 
-## 📰 [Article](Article/Article.md)
-
-&nbsp;
+## 📰 [Article](article/article.md)
 
 ## 💡 INDEX
 
-* ## Django
+* **Django**
+  * [장고 One To One modeling 하는 방식 \(장고 기본 User 확장하는 방법\)](django/_-_user_-_.md)
+  * [장고 다른 OS에서 환경설정 동일화하는 방식](django/_-_os-_-_-_.md)
+  * [장고 테이블 지우고 난 후 다시 마이그레이션 하는 방법!](django/_-_-_-_-_-_-_-_.md)
+  * [장고 Forms.py input type 변경](django/_forms_py_input_type_.md)
+  * [장고 URL html 템플릿 URL 설정시 참고사항](django/_url_html_-_url_-_.md)
+  * [장고에서 Migrate란?](django/_migrate.md)
+  * \[특정 확장자만 파일 업로드 가능하게 만들기 \(mp3\)\]\(Django/특정_확장자만_파일_업로드_가능하게_만들기_\(mp3\).md\)
+  * [Django 파일 업로드시 안올라갈때 대처법](django/django_-_-_-_.md)
+  * [Django를 pycharm에서 적용하는 방식](django/django-_pycharm-_-_.md)
+  * [favicon.ico 404 Not found](django/favicon.ico_404_not_found.md)
+  * [장고에서 머신러닝을 사용하는 방법](django/_-_.md)
 
-  * [장고 One To One modeling 하는 방식 (장고 기본 User 확장하는 방법)](Django/장고_기본_User_확장하는_방법.md)
-  * [장고 다른 OS에서 환경설정 동일화하는 방식](Django/장고_다른_OS에서_환경설정_동일화하는_방식.md)
-  * [장고 테이블 지우고 난 후 다시 마이그레이션 하는 방법!](Django/장고_테이블_지우고_난_후_다시_마이그레이션_하는_방법!.md)
-  * [장고 Forms.py input type 변경](Django/장고_Forms_py_input_type_변경.md)
-  * [장고 URL html 템플릿 URL 설정시 참고사항](Django/장고_URL_html_템플릿_URL_설정시_참고사항.md)
-  * [장고에서 Migrate란?](Django/장고에서_Migrate란.md)
-  * [특정 확장자만 파일 업로드 가능하게 만들기 (mp3)](Django/특정_확장자만_파일_업로드_가능하게_만들기_(mp3).md)
-  * [Django 파일 업로드시 안올라갈때 대처법](Django/Django_파일_업로드시_안올라갈때_대처법.md)
-  * [Django를 pycharm에서 적용하는 방식](Django/Django를_pycharm에서_적용하는_방식.md)
-  * [favicon.ico 404 Not found](Django/favicon.ico_404_Not_found.md)
-  * [장고에서 머신러닝을 사용하는 방법](Django/장고에서_머신러닝을_적용하는법.md)
-
-  
-
-    &nbsp;
-
-* ## GIT
-
-  * [원격 저장소에 올라간 커밋 날리기](Git/원격_저장소에_올라간_커밋_날리기.md)
-  * [Git pull request시 Conflict 발생시 처리하는 방법](Git/Git_pull_request시_Conflict_발생시_처리하는_방법.md)
-  * [Git 커밋하나만 되돌리는법](Git/Git_커밋하나만_되돌리는법.md) 
-  * [Pull Request 올릴때 같은 Issue를 링크하는 법](Git/pull_Request와_같은_Issue를_링크하는_법.md)
-
-
-  &nbsp;
-
-* ## AWS
-
-  * [장고에 file 이동 위치 S3로 경로 설정](AWS/장고_file_경로설정,md)
-  * [EB 설정법](AWS/EB설정법.md)
-  * [ElasticBeanstalk란?](AWS/ElasticBeanstalk.md)
-  * [S3에 Static파일 저장 경로 잡기](AWS/s3에_static파일_저장경로잡기.md)
-  * [AWS Linux에서 FFMPEG 설치하기 (ElasticBeanStalk)](AWS/AWS_Linux에서_FFMPEG_설치하기.md)
-  
-
+```text
 &nbsp;
+```
 
+* **GIT**
+  * [원격 저장소에 올라간 커밋 날리기](git/_-_-_-_.md)
+  * [Git pull request시 Conflict 발생시 처리하는 방법](git/git_pull_request-_conflict_-_-_.md)
+  * [Git 커밋하나만 되돌리는법](git/git_-_.md) 
+  * [Pull Request 올릴때 같은 Issue를 링크하는 법](git/pull_request-_-_issue-_-_.md)
+* **AWS**
+  * [장고에 file 이동 위치 S3로 경로 설정](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/AWS/장고_file_경로설정,md/README.md)
+  * [EB 설정법](aws/eb.md)
+  * [ElasticBeanstalk란?](aws/elasticbeanstalk.md)
+  * [S3에 Static파일 저장 경로 잡기](aws/s3-_static-_.md)
+  * [AWS Linux에서 FFMPEG 설치하기 \(ElasticBeanStalk\)](aws/aws_linux-_ffmpeg_.md)
+* **SPRING**
+  * [mybatis 에서 동적 쿼리를 위한 여러개의 input parameter 처리](spring/mybatis_-_parameter_.md)
+  * [Mybatis JDK 버젼 맞추기](spring/mybatis_jdk_-_.md)
+  * [Spring Boot로 카카오 소셜로그인 만들기](spring/spring_boot-_-_-_.md)
+  * [Spring Data JPA에서 Query를 사용하는 방식](spring/spring_data_jpa-_query-_-_-_.md)
+  * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](spring/spring_security_oauth_redirect_uri-_-_uri-_-_.md)
+  * [Spring security authorizationGrantType cannot be null 해결 방법](spring/spring_security_authorizationgranttype_cannot_be_null_-_.md)
 
-* ## SPRING
-
-  * [mybatis 에서 동적 쿼리를 위한 여러개의 input parameter 처리](Spring/mybatis_동적쿼리_parameter_처리.md)
-  * [Mybatis JDK 버젼 맞추기](Spring/Mybatis_JDK_버젼_맞추기.md)
-  * [Spring Boot로 카카오 소셜로그인 만들기](Spring/Spring_Boot로_카카오_소셜로그인_만들기.md)
-  * [Spring Data JPA에서 Query를 사용하는 방식](Spring/Spring_Data_JPA에서_Query를_자동_생성하는_법.md)
-  * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](Spring/Spring_security_Oauth_Redirect_URI와_로그인_URI가_만들어지는_방법.md)
-  * [Spring security authorizationGrantType cannot be null 해결 방법](/Spring/Spring_security_authorizationGrantType_cannot_be_null_해결_방법.md)
