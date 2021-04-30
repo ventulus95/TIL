@@ -5,6 +5,7 @@
   * [Spring Boot Security로 카카오 소셜 로그인 만들기](spring/spring_boot-_-_-_.md)
   * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](spring/spring_security_oauth_redirect_uri-_-_uri-_-_.md)
   * [mybatis 에서 동적 쿼리를 위한 여러개의 input parameter 처리](spring/mybatis_-_parameter_.md)
+  * [DB Dummy data 자동 삽입하기](spring/db-dummy-data.md)
   * [Spring에서 DTO가 왜 필요한가?](spring/spring-_dto-_-_.md)
   * [Mybatis JDK 버젼 맞추기](spring/mybatis_jdk_-_.md)
   * [Spring Data JPA에서 Query를 사용하는 방식.](spring/spring_data_jpa-_query-_-_-_.md)
