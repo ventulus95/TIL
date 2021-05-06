@@ -46,6 +46,7 @@
   * [Spring Security를 통한 외부 Oauth2.0 Redirect URI와 로그인 URI이 만들어지는 방식](spring/spring_security_oauth_redirect_uri-_-_uri-_-_.md)
   * [Spring security authorizationGrantType cannot be null 해결 방법](spring/spring_security_authorizationgranttype_cannot_be_null_-_.md)
   * [DB Dummy Data 자동 삽입하기](spring/db-dummy-data.md)
+  * [SpringBoot 간단한 Error처리 방법](spring/springboot-error.md)
 
 
 

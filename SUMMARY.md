@@ -9,6 +9,7 @@
   * [Spring에서 DTO가 왜 필요한가?](spring/spring-_dto-_-_.md)
   * [Mybatis JDK 버젼 맞추기](spring/mybatis_jdk_-_.md)
   * [Spring Data JPA에서 Query를 사용하는 방식.](spring/spring_data_jpa-_query-_-_-_.md)
+  * [SpringBoot 간단한 Error처리 방법](spring/springboot-error.md)
   * [Spring security authorizationGrantType cannot be null 해결 방법](spring/spring_security_authorizationgranttype_cannot_be_null_-_.md)
 * [Git](git/README.md)
   * [원격 저장소에 올라간 커밋 날리기](git/_-_-_-_.md)
