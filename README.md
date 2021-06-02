@@ -1,6 +1,6 @@
 # 👾 TIL \(Today I Learned\) 👀
 
-읽어 보면 좋은 글과 스스로 학습한 것을 정리합니다
+읽어 보면 좋은 글과 스스로 학습한 것을 정리합니다!
 
 ## 📰 [Article](article/article.md)
 
