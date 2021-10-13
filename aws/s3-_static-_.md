@@ -15,4 +15,3 @@
 그러니까 static 파일은 경로 설정을 따로 잡아줘야한다. 뭐 굳이 안그래도 되는 것 같긴한데, 어차피 가장 상위폴더 /media인가 /static가의 차이가 생기기 때문에, 반강제적인 처리가 필요하긴 하다.
 
 참고: [https://blog.myungseokang.dev/posts/django-use-s3/](https://blog.myungseokang.dev/posts/django-use-s3/)
-

@@ -1,17 +1,17 @@
 # Git 커밋 하나만 되돌리는 법
 
-협업을 하다가 보면, branch별로 git을 관리한다. 이번 프로젝트 도중에 기능을 삭제했는데 기능을 다시 되돌려야하는 경우가 발생했다. 문제는 이미 몇개의 커밋을 푸쉬해버린 상황이었다. 그나마 상황이 괜찮았던 것은 내가 Commit을 기능삭제한 부분을 따로 커밋을 했다는 것이다. ~~이럴줄알고~~ 그러면 **이 기능 삭제 커밋만 빼고**  나머지 커밋을 살리는 방법은 뭘까?
+협업을 하다가 보면, branch별로 git을 관리한다. 이번 프로젝트 도중에 기능을 삭제했는데 기능을 다시 되돌려야하는 경우가 발생했다. 문제는 이미 몇개의 커밋을 푸쉬해버린 상황이었다. 그나마 상황이 괜찮았던 것은 내가 Commit을 기능삭제한 부분을 따로 커밋을 했다는 것이다. ~~이럴줄알고~~ 그러면 **이 기능 삭제 커밋만 빼고 ** 나머지 커밋을 살리는 방법은 뭘까?
 
 Commit을 되돌리기위해서는 여러가지 방법이 있으나, 검색해본 결과 깃 리베이스를 사용하여 해결했다.
 
-```text
+```
 git rebase -i HEAD^^ or
 git rebase -i <커밋hash값>
 ```
 
 git Rebase를 통해서 이전의 커밋을 통해서 필요한 부분을 처리할 수 있는 방법이 존재한다.
 
-![&#xC2A4;&#xD06C;&#xB9B0;&#xC0F7; 2020-08-14 &#xC624;&#xD6C4; 1 23 55](https://user-images.githubusercontent.com/17822723/90216132-b5ed8b00-de38-11ea-8be3-529262446fc2.png)
+![스크린샷 2020-08-14 오후 1 23 55](https://user-images.githubusercontent.com/17822723/90216132-b5ed8b00-de38-11ea-8be3-529262446fc2.png)
 
 다음과 같은 방법으로 이 커밋을 살릴지 죽일지를 git CLI를 통해서 결정을 할 수 있고 실제로 이 커밋은 최신순이 아닌 역순으로 배열되어 한개씩 한개씩 체크하면서 넘어갈 수 있다.
 
@@ -31,7 +31,7 @@ git Rebase를 통해서 이전의 커밋을 통해서 필요한 부분을 처리
 
 CLI를 통해서 `detached Head` 된 branch를 다시 원래 branch에 붙이고 싶다면 커밋한 후에
 
-```text
+```
 git checkout -b <branch> ex)feature/0000 요롷게?
 ```
 
@@ -41,11 +41,10 @@ git checkout -b <branch> ex)feature/0000 요롷게?
 
 그렇게 두개의 branch가 생기면 이렇게 차이가 발생하는 것을 볼 수 있다.
 
-![&#xCEA1;&#xCC98;](https://user-images.githubusercontent.com/17822723/90216128-b25a0400-de38-11ea-82fd-eb6431c217f4.jpg)
+![캡처](https://user-images.githubusercontent.com/17822723/90216128-b25a0400-de38-11ea-82fd-eb6431c217f4.jpg)
 
 출처:[https://superuser.com/questions/35267/how-can-i-roll-back-1-commit](https://superuser.com/questions/35267/how-can-i-roll-back-1-commit)
 
 [https://okky.kr/article/440421](https://okky.kr/article/440421)
 
 [http://www.devkuma.com/books/pages/433](http://www.devkuma.com/books/pages/433)
-

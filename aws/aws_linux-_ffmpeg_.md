@@ -1,6 +1,6 @@
-# AWS Linux에서 FFMPEG 설치하기 \(ElasticBeanStalk\)
+# AWS Linux에서 FFMPEG 설치하기 (ElasticBeanStalk)
 
-![MP4.1&#xC5D0;&#xC11C; AV1 &#xC9C0;&#xC6D0;&#xC73C;&#xB85C; &#xCD9C;&#xC2DC; &#xB41C; FFMPEG 4 - WebSetNet](https://websetnet.net/wp-content/uploads/2018/11/ffmpeg-4-1-released-with-av1-support-in-mp4.png)
+![MP4.1에서 AV1 지원으로 출시 된 FFMPEG 4 - WebSetNet](https://websetnet.net/wp-content/uploads/2018/11/ffmpeg-4-1-released-with-av1-support-in-mp4.png)
 
 이런 주제를 사용하게 된 이유도 사실 내가 이전에 했었던 프로젝트가 DeepLearning을 사용했다. 그리고 그 딥러닝을 Django 백엔드에서 딥러닝 모듈을 돌리는 터라, 이 딥러닝을 실행시키기 위해서는 FFMPEG이 필요했다.
 
@@ -14,22 +14,21 @@
 2. bin으로 이동후
 3. ffmpeg 폴더 설치후 이동
 
-```text
+```
 1. sudo su -
 2. cd /usr/local/bin
 3. mkdir ffmpeg && cd ffmpeg
 ```
 
-1. 직접 링크를 통해서 다운로드를 받는다. 자신의 OS 비트에 맞는 파일을 설치합니다. 물론 버젼별 설치도 가능합니다
+1.  직접 링크를 통해서 다운로드를 받는다. 자신의 OS 비트에 맞는 파일을 설치합니다. 물론 버젼별 설치도 가능합니다
 
-   이전 버젼 릴리즈는 [https://johnvansickle.com/ffmpeg/old-releases/](https://johnvansickle.com/ffmpeg/old-releases/) 에서 설치가능하고,
+    이전 버젼 릴리즈는 [https://johnvansickle.com/ffmpeg/old-releases/](https://johnvansickle.com/ffmpeg/old-releases/) 에서 설치가능하고,
 
-   최신버젼은 [https://johnvansickle.com/ffmpeg/](https://johnvansickle.com/ffmpeg/) 에서 다운로드 가능합니다.
-
+    최신버젼은 [https://johnvansickle.com/ffmpeg/](https://johnvansickle.com/ffmpeg/) 에서 다운로드 가능합니다.
 2. 다운로드한 파일을 압축해제합니다. 그리고 난뒤에 확인하면 실행이됩니다. 하지만, 이걸 어디서든 사용하기위해서는 ln으로 등록후에 사용해야합니다.
 3. ln으로 등록한뒤에 ffmpeg을 어디서든 사용할 수 있습니다. 
 
-```text
+```
 4. wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
 5. tar -xf ffmpeg-release-amd64-static.tar.xz -> ./ffmpeg -version
 cp -a /usr/local/bin/ffmpeg/ffmpeg-4.2.1-amd64-static/ . /usr/local/bin/ffmpeg/
@@ -46,7 +45,7 @@ EB에서는 eb ssh을 통해서 설치하는 방식도 있긴한데, 실제로 E
 
 물론 ImageMagick을 왜까는지는 좀 의문이지만...? 이 방법이 제일 잘되는 방법이긴 해서 imagick과 같은 설치 명령어는 없어도 작동될 것 같습니다.
 
-```text
+```
 packages:
   yum:
     ImageMagick: []
@@ -71,4 +70,3 @@ commands:
 [https://medium.com/@maskaravivek/how-to-install-ffmpeg-on-ec2-running-amazon-linux-451e4a8e2694](https://medium.com/@maskaravivek/how-to-install-ffmpeg-on-ec2-running-amazon-linux-451e4a8e2694)
 
 [https://stackoverflow.com/questions/39241654/how-to-install-ffmpeg-on-elastic-beanstalk](https://stackoverflow.com/questions/39241654/how-to-install-ffmpeg-on-elastic-beanstalk)
-

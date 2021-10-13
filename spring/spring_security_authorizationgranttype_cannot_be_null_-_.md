@@ -48,7 +48,7 @@ Spring Boot 1.5 버젼에서는 이런식이다.
 
 1.5버젼에서는 `redirect-uri-template`이 `redirectUri` 로 다음과 같이 변화하였다.
 
-## 근데 변화한 방식을 그대로 적용해도 되는줄 알았으나...
+## 근데 변화한 방식을 그대로 적용해도 되는줄 알았으나...?
 
 사실 이게 큰 문제를 발생시키는 것 같다고 생각은 안했지만, 실제로 2.2버젼에서 이렇게 `redirect-uri-template`로 사용하게 되면 다음과 같은 에러가 발생한다
 
@@ -68,4 +68,3 @@ nested exception is java.lang.IllegalArgumentException: authorizationGrantType c
 Oauth Redirect uri 설정시 꼭 주의하자!
 
 [https://stackoverflow.com/questions/49315552/authorizationgranttype-cannot-be-null-in-spring-security-5-oauth-client-and-spri](https://stackoverflow.com/questions/49315552/authorizationgranttype-cannot-be-null-in-spring-security-5-oauth-client-and-spri)
-

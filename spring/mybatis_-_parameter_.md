@@ -30,7 +30,7 @@ RowBound는 특정갯수만큼의 레코드를 건너띄는 처리를해주게 �
 
 아래를 참고하자
 
-[링크](https://antop.tistory.com/entry/Mybatis-Interceptor-RowBounds-를-이용한-페이징-처리#recentEntries)
+[링크](https://antop.tistory.com/entry/Mybatis-Interceptor-RowBounds-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%8E%98%EC%9D%B4%EC%A7%95-%EC%B2%98%EB%A6%AC#recentEntries)
 
 다시 본론으로 돌아와서
 
@@ -41,4 +41,3 @@ RowBound는 특정갯수만큼의 레코드를 건너띄는 처리를해주게 �
 혹은 아예 VO에 넣어서 requestparameter를 vo를 넣고 이 문제를 처리하는 방식도 존재한다.
 
 마지막으로 @param 을 통해서 파라미터 명을 인식시켜서 넣는 방식도 존재한다.
-

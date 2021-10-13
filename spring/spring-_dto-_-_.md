@@ -10,7 +10,6 @@ DTO가 필요한 이유가 사실 궁금하긴 했다. VO를 가지고 일부로
 
 를 통해서 그 답변이 될 수 있을 것 같아서, 이 링크를 남겨본다.
 
-![S\_\_1417255.jpg](https://lucyweb.net/data/editor/1802/20180220233757_7477a760286efa70810cce3f32ca8d1e_vepy.jpg)
+![S\_\_1417255.jpg](https://lucyweb.net/data/editor/1802/20180220233757\_7477a760286efa70810cce3f32ca8d1e_vepy.jpg)
 
 ## 번역을 대충 해보자면...
-

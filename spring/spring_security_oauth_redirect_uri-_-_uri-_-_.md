@@ -8,13 +8,13 @@
 
 ## Spring Security에서 Oauth2.0은...
 
-![Security GIF \| Gfycat](https://thumbs.gfycat.com/PoliteFluidGannet-size_restricted.gif)
+![Security GIF | Gfycat](https://thumbs.gfycat.com/PoliteFluidGannet-size_restricted.gif)
 
 Oauth의 개념을 일일히 짚고 넘어가는건 여기서 다룰 내용은 아니라고 생각한다. 차후에 개념 정리를 위해서 블로그에 적어두겠지만. 어쨌든 Oauth2.0는 외부 사이트의 인증절차를 간편하게 해주고 통칭 "**소셜로그인**"을 하기위해서는 필수적이다.
 
 물론 Spring Security가 Django처럼 미리 세팅이 되있어서 바로 줍줍해서 먹으면 좋겠으나, 실제로 뭐 미국내에서 가장 유명한 사이트들을 제외한 다른 부분들은 각자 알아서 설정해놓게끔 해둔다.
 
-![&#x110C;&#x1166;&#x1106;&#x1169;&#x11A8; &#x110B;&#x1165;&#x11B9;&#x110B;&#x1173;&#x11B7;-1](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/My-CODE/제목%20없음-1.png)
+![제목 없음-1](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/My-CODE/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7-1.png)
 
 대충 이런것들..
 
@@ -22,19 +22,19 @@ Oauth의 개념을 일일히 짚고 넘어가는건 여기서 다룰 내용은 �
 
 ## 하지만 우리가 로그인 하고 싶은거는 이런건데...
 
-![&#xCE74;&#xCE74;&#xC624;](https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png)
+![카카오](https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png)
 
-![&#xB124;&#xC774;&#xBC84; &#xACE0;&#xAC1D;&#xC13C;&#xD130;](https://ssl.pstatic.net/static/help/img/img_logo_naver_200X200.png)
+![네이버 고객센터](https://ssl.pstatic.net/static/help/img/img_logo_naver\_200X200.png)
 
-실제로 우리가 하고싶은건 뭐 구글도 괜찮지만... 한국에 사는 이상 네이버와 카카오 로그인은 필수적인건 둘째치고, 이외\(디스코드같은 것들\)의 oauth 소셜 로그인이 필요할 수 도 때문에 Spring Security로 직접 구현할 필요가 있을 것이다. 그것을 위해서는 좀 미리 알아둬야하는 것들이 있다.
+실제로 우리가 하고싶은건 뭐 구글도 괜찮지만... 한국에 사는 이상 네이버와 카카오 로그인은 필수적인건 둘째치고, 이외(디스코드같은 것들)의 oauth 소셜 로그인이 필요할 수 도 때문에 Spring Security로 직접 구현할 필요가 있을 것이다. 그것을 위해서는 좀 미리 알아둬야하는 것들이 있다.
 
 ### Redirect URI?
 
 우리가 타사 로그인을 한뒤에 그 로그인을 바탕으로 최종 인증을 다 맞췄을때 다시 우리 페이지로 돌아와하는 주소를 알려줘야한다. **즉, 인증 받고 우리집으로 돌아올 경로를 알려주는 주소이다.** 그래서 대부분 소셜로그인의 Redirect URI는 소셜로그인을 허용하는 페이지에서 등록을 하게끔 되어있다. 입력해야하는 주소가 대부분 이 주소이다.
 
-![&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2020-09-10 &#x110B;&#x1169;&#x110C;&#x1165;&#x11AB; 9.26.50](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/스크린샷%202020-09-10%20오전%209.25.48.png)
+![스크린샷 2020-09-10 오전 9.26.50](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-09-10%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%209.25.48.png)
 
-![&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2020-09-10 &#x110B;&#x1169;&#x110C;&#x1165;&#x11AB; 9.26.50](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/스크린샷%202020-09-10%20오전%209.26.50.png)
+![스크린샷 2020-09-10 오전 9.26.50](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-09-10%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%209.26.50.png)
 
 스프링부트에서는 다음과 같이 지정을 하고 있다.
 
@@ -64,22 +64,22 @@ spring:
             jwk-set-uri: https://your-subdomain.oktapreview.com/oauth2/v1/keys
 ```
 
-| Spring Boot 2.x | ClientRegistration |
-| :--- | :--- |
-| `spring.security.oauth2.client.registration.*[registrationId]*` | `registrationId` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.client-id` | `clientId` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.client-secret` | `clientSecret` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.client-authentication-method` | `clientAuthenticationMethod` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.authorization-grant-type` | `authorizationGrantType` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.redirect-uri` | `redirectUriTemplate` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.scope` | `scopes` |
-| `spring.security.oauth2.client.registration.*[registrationId]*.client-name` | `clientName` |
-| `spring.security.oauth2.client.provider.*[providerId]*.authorization-uri` | `providerDetails.authorizationUri` |
-| `spring.security.oauth2.client.provider.*[providerId]*.token-uri` | `providerDetails.tokenUri` |
-| `spring.security.oauth2.client.provider.*[providerId]*.jwk-set-uri` | `providerDetails.jwkSetUri` |
-| `spring.security.oauth2.client.provider.*[providerId]*.user-info-uri` | `providerDetails.userInfoEndpoint.uri` |
-| `spring.security.oauth2.client.provider.*[providerId]*.user-info-authentication-method` | `providerDetails.userInfoEndpoint.authenticationMethod` |
-| `spring.security.oauth2.client.provider.*[providerId]*.user-name-attribute` | `providerDetails.userInfoEndpoint.userNameAttributeNa` |
+| Spring Boot 2.x                                                                              | ClientRegistration                                      |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `spring.security.oauth2.client.registration.*[registrationId]*`                              | `registrationId`                                        |
+| `spring.security.oauth2.client.registration.*[registrationId]*.client-id`                    | `clientId`                                              |
+| `spring.security.oauth2.client.registration.*[registrationId]*.client-secret`                | `clientSecret`                                          |
+| `spring.security.oauth2.client.registration.*[registrationId]*.client-authentication-method` | `clientAuthenticationMethod`                            |
+| `spring.security.oauth2.client.registration.*[registrationId]*.authorization-grant-type`     | `authorizationGrantType`                                |
+| `spring.security.oauth2.client.registration.*[registrationId]*.redirect-uri`                 | `redirectUriTemplate`                                   |
+| `spring.security.oauth2.client.registration.*[registrationId]*.scope`                        | `scopes`                                                |
+| `spring.security.oauth2.client.registration.*[registrationId]*.client-name`                  | `clientName`                                            |
+| `spring.security.oauth2.client.provider.*[providerId]*.authorization-uri`                    | `providerDetails.authorizationUri`                      |
+| `spring.security.oauth2.client.provider.*[providerId]*.token-uri`                            | `providerDetails.tokenUri`                              |
+| `spring.security.oauth2.client.provider.*[providerId]*.jwk-set-uri`                          | `providerDetails.jwkSetUri`                             |
+| `spring.security.oauth2.client.provider.*[providerId]*.user-info-uri`                        | `providerDetails.userInfoEndpoint.uri`                  |
+| `spring.security.oauth2.client.provider.*[providerId]*.user-info-authentication-method`      | `providerDetails.userInfoEndpoint.authenticationMethod` |
+| `spring.security.oauth2.client.provider.*[providerId]*.user-name-attribute`                  | `providerDetails.userInfoEndpoint.userNameAttributeNa`  |
 
 즉, 일정형식만 잘 지켜진다면 대부분의 모든 정보를 클래스를 만들어서 생성하는 방식이 아니더라도 알아서 Spring Boot가 만들어준다.
 
@@ -93,11 +93,11 @@ Oauth를 위한 토큰 URI, JWT 토큰 URI, User정보를 받아오는 URI등을
 
 네이버나 카카오는 다음과 같이 지정해두곤 한다.
 
-![&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2020-09-10 &#x110B;&#x1169;&#x110C;&#x1165;&#x11AB; 9.32.33](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/스크린샷%202020-09-10%20오전%209.32.33.png)
+![스크린샷 2020-09-10 오전 9.32.33](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-09-10%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%209.32.33.png)
 
-![&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2020-09-10 &#x110B;&#x1169;&#x110C;&#x1165;&#x11AB; 9.33.53](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/스크린샷%202020-09-10%20오전%209.33.53.png)
+![스크린샷 2020-09-10 오전 9.33.53](https://github.com/ventulus95/TIL/tree/76f05b8af8c692b1182e679132dbfffb4736169a/Users/LeeChnagSup/Desktop/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-09-10%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%209.33.53.png)
 
-[https://developers.naver.com/docs/common/openapiguide/apilist.md\#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api](https://developers.naver.com/docs/common/openapiguide/apilist.md#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api)
+[https://developers.naver.com/docs/common/openapiguide/apilist.md#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api](https://developers.naver.com/docs/common/openapiguide/apilist.md#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api)
 
 [https://developers.kakao.com/docs/latest/ko/reference/rest-api-reference](https://developers.kakao.com/docs/latest/ko/reference/rest-api-reference)
 
@@ -117,7 +117,6 @@ Oauth를 위한 토큰 URI, JWT 토큰 URI, User정보를 받아오는 URI등을
 
 과 같이 RegistrationId만 존재하면 대부분 동일하게 만들어준다는 것을 알 수 있다.
 
-**즉, 이걸 바탕으로 소셜 로그인에 필요한 입구 URI 돌아올 수 있게하는 URI가 완성됨을 알 수 있다.** 
+**즉, 이걸 바탕으로 소셜 로그인에 필요한 입구 URI 돌아올 수 있게하는 URI가 완성됨을 알 수 있다. **
 
 이런 방식으로 Spring Security에서는 Redirect URI와 소셜 로그인 URI를 만들어주는 것을 알 수 있었다. 차후에 다른 것에 대해서도 알아보는 기회를 가지겠다.
-
